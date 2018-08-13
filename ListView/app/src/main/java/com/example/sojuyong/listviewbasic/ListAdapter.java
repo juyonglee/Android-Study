@@ -10,30 +10,30 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class ListAdapter extends ArrayAdapter<Movie> {
 
+    private Context context;
     private int resource;
+    private List<Movie> objects;
 
-    public ListAdapter(@NonNull Context context, int resource) {
-        super(context, resource);
+    public ListAdapter(@NonNull Context context, int resource, @NonNull List<Movie> objects) {
+        super(context, resource, objects);
+        this.context = context;
         this.resource = resource;
-    }
-
-    @Override
-    public void add(@Nullable Movie object) {
-        this.add(object);
-        notifyDataSetChanged();
+        this.objects = objects;
     }
 
     @Override
     public int getCount() {
-        return this.getCount();
+        return objects.size();
     }
 
     @Nullable
     @Override
     public Movie getItem(int position) {
-        return this.getItem(position);
+        return objects.get(position);
     }
 
     @NonNull
