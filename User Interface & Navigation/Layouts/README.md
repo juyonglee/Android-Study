@@ -13,4 +13,3 @@
 2. **Instantiate layout elements at runtime** 
     
     `Your app can create View and ViewGroup objects (and manipulate their properties) programmatically.` Declaring your UI in XML allows you to separate the presentation of your app from the code that controls its behavior. **The Android framework** gives you the flexibility to use either or both of these methods to build your app's UI.
-
