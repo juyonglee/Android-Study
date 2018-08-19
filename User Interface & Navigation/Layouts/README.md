@@ -48,3 +48,38 @@ public void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.main_layout);
 }
 ```
+
+## Attributes
+- Every View and ViewGroup object supports their own variety of XML attributes. 
+- Some attributes are specific to a View object (for example, TextView supports the textSize attribute), but these attributes are also inherited by any View objects that may extend this class. 
+- Some are common to all View objects, because they are inherited from the root View class (like the id attribute). 
+- And, other attributes are considered "layout parameters," which are attributes that describe certain layout orientations of the View object, as defined by that object's parent ViewGroup object.
+### ID
+- Any View object may have an _**`integer ID`**_ associated with it, to uniquely identify the View _**within the tree**_. 
+- When the app is compiled, this ID is referenced as an integer, **but the ID is typically assigned in the layout XML file as a _string_**, in the id attribute. 
+- The syntax for an ID, inside an XML tag is:
+    ```xml
+    android:id="@+id/my_button"
+    ```
+- _**`The at-symbol (@)`**_ at the beginning of the string indicates that the XML parser should parse and expand the rest of the ID string and identify it as an ID resource. 
+- _**`The plus-symbol (+)`**_ means that this is a new resource name that must be created and added to our resources `(in the R.java file)`. There are a number of other ID resources that are offered by the Android framework. 
+- **`When referencing an Android resource ID`**, you do not need the plus-symbol, but _must add the android package namespace._
+    ```xml
+    android:id="@android:id/empty"
+    ```
+- With the android package namespace in place, we're now referencing an ID from the android.R resources class, rather than the local resources class.
+
+**`[Common Pattern]`** In order to create views and reference them from the app.
+1. Define a view/widget in _the layout file_ and assign it a unique ID:
+
+    ```xml
+    <Button android:id="@+id/my_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_button_text"/>
+    ```
+
+2. Create an _**`instance of the view object`**_ and capture it from the layout.
+    ```java
+    Button myButton = (Button) findViewById(R.id.my_button);
+    ```
