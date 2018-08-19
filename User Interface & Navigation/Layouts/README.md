@@ -36,3 +36,15 @@
                 android:text="Nice to meet you!" />
     </LinearLayout>
     ```
+
+## Load the XML Resource
+- When you compile your app, **`each XML layout file is compiled into a View resource`**. 
+- You should load the layout resource from your app code, in your _**`Activity.onCreate()`**_ callback implementation. 
+- Do so by calling _**`setContentView()`**_, passing it _**the reference**_ to your layout resource in the form of: _**`R.layout.layout_file_name`**_.
+- The _**`onCreate()`**_ callback method in your Activity _**`is called by the Android framework`**_ when your Activity is launched.
+```java
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main_layout);
+}
+```
