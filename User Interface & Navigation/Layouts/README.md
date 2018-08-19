@@ -51,9 +51,8 @@ public void onCreate(Bundle savedInstanceState) {
 
 ## Attributes
 - Every View and ViewGroup object supports their own variety of XML attributes. 
-- Some attributes are specific to a View object (for example, TextView supports the textSize attribute), but these attributes are also inherited by any View objects that may extend this class. 
-- Some are common to all View objects, because they are inherited from the root View class (like the id attribute). 
-- And, other attributes are considered "layout parameters," which are attributes that describe certain layout orientations of the View object, as defined by that object's parent ViewGroup object.
+- `Some are common to all View objects, because they are inherited from the root View class (like the id attribute)`. 
+- Other attributes are considered _**`"layout parameters"`**_, _which are attributes that describe certain layout orientations of the View object, as defined by that object's parent ViewGroup object._
 ### ID
 - Any View object may have an _**`integer ID`**_ associated with it, to uniquely identify the View _**within the tree**_. 
 - When the app is compiled, this ID is referenced as an integer, **but the ID is typically assigned in the layout XML file as a _string_**, in the id attribute. 
@@ -83,3 +82,16 @@ public void onCreate(Bundle savedInstanceState) {
     ```java
     Button myButton = (Button) findViewById(R.id.my_button);
     ```
+### Layout Parameters
+- XML layout attributes named _**`layout_something`**_ define `layout parameters for the View` that are appropriate for the ViewGroup in which it resides.
+- **`Every ViewGroup class implements a nested class that extends`** _ViewGroup.LayoutParams_. This subclass contains property types that define the **`size`** and **`position`** for each child view, as appropriate for the view group. 
+- _**`The parent view group defines layout parameters for each child view (including the child view group).`**_
+- _`Note that every LayoutParams subclass has its own syntax for setting values.`_ Each child element must define LayoutParams that are appropriate for its parent, though it may also define different LayoutParams for its own children.
+- All view groups include a **width** and **height** `(layout_width and layout_height)`, and each view is required to define them. Many LayoutParams also include optional `margins` and `borders`.
+
+You can specify width and height with exact measurements, though you probably won't want to do this often. More often, you will use one of these constants to set the width or height:
+
+1. **wrap_content**: It tells your view to size itself to the dimensions required by its content.
+2. **match_parent**: It tells your view to become as big as its parent view group will allow.
+- `In general, specifying a layout width and height using absolute units such as pixels is not recommended.` 
+- Instead, using relative measurements such as `density-independent pixel units (dp)`, `wrap_content`, or `match_parent`, is a better approach, because it helps ensure that your app will display properly across a variety of device screen sizes. The accepted measurement types are defined in the [Available Resources](https://developer.android.com/guide/topics/resources/available-resources#dimension) document.
