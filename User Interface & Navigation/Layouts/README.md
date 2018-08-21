@@ -112,3 +112,11 @@ It is possible to retrieve the location of a view by invoking the methods _`getL
 - **Padding**: The padding is expressed in pixels for the left, top, right and bottom parts of the view. Padding can be used to offset the content of the view by a specific number of pixels.Padding can be set using the _`setPadding(int, int, int, int)`_ method and queried by calling _`getPaddingLeft()`_, _`getPaddingTop()`_, _`getPaddingRight()`_ and _`getPaddingBottom()`_.
 
 Even though a view can define a padding, it does not provide any support for margins. However, view groups provide such a support. Refer to ViewGroup and ViewGroup.MarginLayoutParams for further information. For more information about dimensions, see [Dimension Values](https://developer.android.com/guide/topics/resources/more-resources#Dimension).
+
+## Common Layouts
+Each subclass of _`the ViewGroup class`_ provides a unique way _**`to display the views you nest within it`**_. Below are some of the more common layout types that are built into the Android platform.
+
+    [Note] Although you can nest one or more layouts within another layout to achieve your UI design, you should strive to keep your layout hierarchy as shallow as possible. Your layout draws faster if it has fewer nested layouts (a wide view hierarchy is better than a deep view hierarchy).
+1. **Linear Layout**: A layout that organizes its children into a single _**`horizontal`**_ or _**`vertical`**_ row. It creates a scrollbar if the length of the window exceeds the length of the screen.
+2. **Relative Layout**: Enables you to specify the location of child objects relative to each other.
+3. **Web View**: Displays web pages.
