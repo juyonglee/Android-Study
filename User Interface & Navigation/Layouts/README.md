@@ -120,3 +120,11 @@ Each subclass of _`the ViewGroup class`_ provides a unique way _**`to display th
 1. **Linear Layout**: A layout that organizes its children into a single _**`horizontal`**_ or _**`vertical`**_ row. It creates a scrollbar if the length of the window exceeds the length of the screen.
 2. **Relative Layout**: Enables you to specify the location of child objects relative to each other.
 3. **Web View**: Displays web pages.
+
+## Building Layouts with an Adapter
+- When the content for your layout is _**`dynamic`**_ or _**`not pre-determined`**_, you can use a layout that subclasses **`AdapterView`** to populate the layout with views at _`runtime`_. 
+- _**`A subclass of the AdapterView class uses an Adapter to bind data to its layout.`**_ 
+- The Adapter behaves as a _**`middleman`**_ between the data source and the AdapterView layout
+— The Adapter retrieves the data (from a source such as an array or a database query) and converts each entry into a view that can be added into the AdapterView layout.
+1. **List View**: Displays a scrolling single column list.
+2. **Grid View**: Displays a scrolling grid of columns and rows.
