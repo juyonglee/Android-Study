@@ -95,3 +95,10 @@ You can specify width and height with exact measurements, though you probably wo
 2. **match_parent**: It tells your view to become as big as its parent view group will allow.
 - `In general, specifying a layout width and height using absolute units such as pixels is not recommended.` 
 - Instead, using relative measurements such as `density-independent pixel units (dp)`, `wrap_content`, or `match_parent`, is a better approach, because it helps ensure that your app will display properly across a variety of device screen sizes. The accepted measurement types are defined in the [Available Resources](https://developer.android.com/guide/topics/resources/available-resources#dimension) document.
+
+## Layout Position
+The geometry of a view is that of a **`rectangle`**. A view has a location, expressed as a pair of _**`left`**_ and _**`top coordinates`**_, and two dimensions, expressed as a **`width`** and a **`height`**. The unit for location and dimensions is the pixel.
+
+It is possible to retrieve the location of a view by invoking the methods _`getLeft()`_ and _`getTop()`_. 
+- **_`getLeft()`_**: It returns the left, or X, coordinate of the rectangle representing the view. 
+- **_`getTop()`_**: It returns the top, or Y, coordinate of the rectangle representing the view.
