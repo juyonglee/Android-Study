@@ -102,3 +102,13 @@ The geometry of a view is that of a **`rectangle`**. A view has a location, expr
 It is possible to retrieve the location of a view by invoking the methods _`getLeft()`_ and _`getTop()`_. 
 - **_`getLeft()`_**: It returns the left, or X, coordinate of the rectangle representing the view. 
 - **_`getTop()`_**: It returns the top, or Y, coordinate of the rectangle representing the view.
+
+## Size, Padding and Margins
+**`The size of a view is expressed with a width and a height.`** A view actually possess two pairs of width and height values.
+
+- **Measured Width and Measured Height**: These dimensions define _**`how big a view wants to be within its parent.`**_ The measured dimensions can be obtained by calling _`getMeasuredWidth()`_ and _`getMeasuredHeight()`_.
+- **Width and Height**: It is sometimes drawing width and drawing height. These dimensions define the _**`actual size of the view on screen`**_, at drawing time and after layout. These values may, but do not have to, be different from the measured width and height. The width and height can be obtained by calling _`getWidth()`_ and _`getHeight()`_.
+
+- **Padding**: The padding is expressed in pixels for the left, top, right and bottom parts of the view. Padding can be used to offset the content of the view by a specific number of pixels.Padding can be set using the _`setPadding(int, int, int, int)`_ method and queried by calling _`getPaddingLeft()`_, _`getPaddingTop()`_, _`getPaddingRight()`_ and _`getPaddingBottom()`_.
+
+Even though a view can define a padding, it does not provide any support for margins. However, view groups provide such a support. Refer to ViewGroup and ViewGroup.MarginLayoutParams for further information. For more information about dimensions, see [Dimension Values](https://developer.android.com/guide/topics/resources/more-resources#Dimension).
