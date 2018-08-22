@@ -128,3 +128,17 @@ Each subclass of _`the ViewGroup class`_ provides a unique way _**`to display th
 — The Adapter retrieves the data (from a source such as an array or a database query) and converts each entry into a view that can be added into the AdapterView layout.
 1. **List View**: Displays a scrolling single column list.
 2. **Grid View**: Displays a scrolling grid of columns and rows.
+
+### Filling an adapter view with data
+- You can populate an AdapterView such as ListView or GridView by binding the AdapterView instance to an Adapter, which retrieves data from an external source and creates a View that represents each data entry.
+- Android provides several subclasses of Adapter that are useful for **`retrieving different kinds of data`** and **`building views for an AdapterView`**.
+1. ArrayAdapter
+    - Use this adapter when your data source is an array. 
+    - By default, ArrayAdapter creates a view for each array item _**`by calling toString()`**_ on each item and placing the contents in a TextView.
+    - Then simply call _`setAdapter()`_ on your ListView:
+    ```java
+    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myStringArray);
+    ListView listView = (ListView) findViewById(R.id.listview);
+    listView.setAdapter(adapter);
+    ```
+2. SimpleCursorAdapter
